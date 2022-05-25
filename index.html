@@ -18,7 +18,7 @@
                 <li><a href="#basics">basics</a></li>
                 <li><a href="#head?">what's in the &lt;head&gt;?</a></li>
                 <li><a href="#advanced-text-formatting">advanced text formatting</a></li>
-                <li>section</li>
+                <li><a href="#multimedia-and-embedding">multimedia and embedding</a></li>
             </ul>
         </nav>
 
@@ -216,6 +216,10 @@
                         <code>&amp;</code> 
                         <code><span style="margin-left: 40px;">&amp;amp;</span></code>
                     </dd>
+                    <dt>commenting</dt>
+                    <dd>
+                        <code>&lt;!-- comment --&gt;</code>
+                    </dd>
                 </dl>
             </section>
 
@@ -264,6 +268,241 @@
                 <h2>advanced text formatting</h2>
                 <dl>
                     <dt>description list</dt>
+                    <dd>
+                        --applicable when defining terms. used to markup a set of items and their
+                        descriptions
+                    </dd>
+                    <dd>
+                        <code>&lt;dl&gt;</code> --description list
+                    </dd>
+                    <dd style="margin-left: 80px">
+                        <code>&lt;dt&gt;</code> --description term
+                    </dd>
+                    <dd style="margin-left: 80px">
+                        <code>&lt;dd&gt;</code> --description definition
+                    </dd>
+                    <dd>
+                        <code>&lt;/dl&gt;</code> --description list closing tag
+                    </dd>
+                    <dt>blockquote</dt>
+                    <dd>
+                        --applicable when you want to insert a quote as a block-level element
+                    </dd>
+                    <dd>
+                        <code>&lt;blockquote cite=&quot;https://...&quot;&gt;</code> 
+                    </dd>
+                    <dd style="margin-left: 80px;">
+                        <code>&lt;p&gt;&quot;insert quote here&quot;&lt;/p&gt;</code>
+                    </dd>
+                    <dd>
+                        <code>&lt;blockquote&gt;</code>
+                    </dd>
+                    <dd style="margin-top: 10px">
+                        <code>&lt;blockquote&gt;</code> example :
+                    </dd>
+                    <dd>
+                        <span>How do you feel about people thinking you&apos;re a dark person?</span>
+                        <blockquote cite="https://www.gq.com/story/the-weeknd-september-cover-interview">
+                            <span>&quot;I am not dark. My art is dark, and I&apos;ve gone through dark times. I&apos;ve used those dark times as inspiration for my art. But I feel like because 
+                            I&apos;m not dark, I was able to channel it and put it into my music and into my art.&quot;</span>
+                        </blockquote>
+                        <span>as mentioned in the <a href="https://www.gq.com/story/the-weeknd-september-cover-interview" target="_blank" title="The Weeknd vs. Abel Tesfaye">GQ interview</a>.</span>
+                    </dd>
+                    <dt>inline quotes</dt>
+                    <dd>
+                        --applicable when you want to insert a quote in line
+                    </dd>
+                    <dd>
+                        <code>&lt;p&gt;the quote is : </code>
+                    </dd>
+                    <dd>
+                        <code>&lt;q cite=&quot;https://...&quot;&gt;&quot;insert quote here&quot;&lt;/q&gt;&lt;/p&gt;</code>
+                    </dd>
+                    <dd style="margin-top: 10px">
+                        <code>&lt;q&gt;</code> example :
+                    </dd>
+                    <dd>
+                        <span>How do you feel about people thinking you&apos;re a dark person? 
+                        <q cite="https://www.gq.com/story/the-weeknd-september-cover-interview">I am not dark. My art is dark, 
+                            and I&apos;ve gone through dark times. I&apos;ve used those dark times as inspiration for my art. But I feel like because 
+                            I&apos;m not dark, I was able to channel it and put it into my music and into my art.</q>as mentioned in the 
+                            <a href="https://www.gq.com/story/the-weeknd-september-cover-interview" target="_blank" title="The Weeknd vs. Abel Tesfaye">GQ interview</a>.</span>
+                    </dd>
+                    <dt>abbreviations</dt>
+                    <dd>
+                        <code>&lt;abbr&gt;</code>
+                    </dd>
+                    <dd>
+                        --used to abbreviate a term
+                    </dd>
+                    <dd>
+                        &lt;abbr title=&quot;full-term&quot;&gtabbreviated-term&lt;/abbr&gt;
+                    </dd>
+                    <dd style="margin-top: 10px">
+                        example :
+                    </dd>
+                    <dd>
+                        <span>we use <abbr title="hypertext markup-language">html</abbr> to structure a webpage</span>
+                    </dd>
+                    <dt>contact details</dt>
+                    <dd>
+                        <code>&lt;address&gt;</code>
+                    </dd>
+                    <dd style="margin-left:80px">
+                        &lt;p&gt;
+                    </dd>
+                    <dd style="margin-left: 90px">
+                        name &lt;br&gt;
+                    </dd>
+                    <dd style="margin-left: 90px">
+                        city &lt;br&gt;
+                    </dd>
+                    <dd style="margin-left: 90px">
+                        state &lt;br&gt;
+                    </dd>
+                    <dd style="margin-left: 90px">
+                        country &lt;br&gt;
+                    </dd>
+                    <dd style="margin-left: 80px">
+                        &lt;p&gt;
+                    </dd>
+                    <dd>
+                        <code>&lt;/address&gt;</code>
+                    </dd>
+                    <dd style="margin-top: 10px">
+                        <code>&lt;address&gt;</code> example :
+                    </dd>
+                    <dd>
+                        <address>
+                            <span>
+                                Abel Tesfaye<br>
+                                Toronto<br>
+                                Ontario<br>
+                                Canada<br>
+                            </span>
+                        </address>
+                    </dd>
+                    <dt>subscript and superscript</dt>
+                    <dd>
+                        <code>&lt;sup&gt;</code> and <code>&lt;sub&gt;</code>
+                    </dd>
+                    <dd style="margin-top: 10px">
+                        example :
+                    </dd>
+                    <dd>
+                        <sup>superscript-text</sup> as well as <sub>subscript-text</sub>
+                    </dd>
+                    <dt>computer code elements</dt>
+                    <dd>
+                        <code>&lt;code&gt;</code> --markup pieces of code :
+                        <code>code</code>
+                    </dd>
+                    <dd>
+                        <code>&lt;pre&gt;</code> --retain whitespace :
+                        <pre>retain whitespace</pre>
+                    </dd>
+                    <dd>
+                        <code>&lt;var&gt;</code> --markup variable names :
+                        <var>variable name</var>
+                    </dd>
+                    <dd>
+                        <code>&lt;kbd&gt;</code> --keyboard buttons : 
+                        <kbd>shift</kbd>
+                    </dd>
+                    <dd>
+                        <code>&lt;samp&gt;</code> --program output text : 
+                        <samp>program output</samp>
+                    </dd>
+                    <dt>time</dt>
+                    <dd>
+                        <code>&lt;time datetime=&quot;YYYY-MM-DD&quot;&gt;day month year&lt;/time&gt;</code>
+                    </dd>
+                    <dd>
+                        example : 
+                    </dd>
+                    <dd>
+                        <time datetime="2022-05-25">25 May 2022</time>
+                    </dd>
+                </dl>
+            </section>
+
+            <section id="multimedia-and-embedding">
+                <h2>multimedia and embedding</h2>
+                <dl>
+                    <dt>displaying images</dt>
+                    <dd>
+                        <code>&lt;figure&gt;</code>
+                    </dd>
+                    <dd style="margin-left: 80px">
+                        <code>&lt;img src=&quot;&quot; alt=&quot;&quot; width=&quot;digit&quot; height=&quot;digit&quot;&gt;</code>
+                    </dd>
+                    <dd style="margin-left: 80px">
+                        <code>&lt;figcaption&gt;figure-caption&lt;/figcaption&gt;</code>
+                    </dd>
+                    <dd>
+                        <code>&lt;/figure&gt;</code>
+                    </dd>
+                    <dd style="margin-top: 10px">
+                        example :
+                    </dd>
+                    <dd>
+                        <figure>
+                            <img src="images/black-square.png" alt="black-square" width="512" height="512">
+                            <figcaption>a black square inside of a larger white square</figcaption>
+                        </figure>
+                    </dd>
+                    <dd>
+                        in CSS we can set an image to be the background of an element :
+                    </dd>
+                    <dd>
+                        <code>body {
+                            background-image: url("images/image.png");
+                        }</code>
+                    </dd>
+                    <dt>video and audio</dt>
+                    <dd>
+                        <code>&lt;video src=&quot;&quot; controls&gt;</code>
+                    </dd>
+                    <dd style="margin-left: 80px">
+                        <code>&lt;p&gt;fallback message if the user's browser does not support html videos. we
+                            can also provide a link if possible &lt;a href=&quot;&quot;&gt;here&lt;/a&gt;&lt;/p&gt;
+                        </code>
+                    </dd>
+                    <dd>
+                        <code>&lt;/video&gt;</code>
+                    </dd>
+                    <dd>
+                        *NOTE* : different browsers support different video/audio formats such as mp3, mp4, WebM
+                    </dd>
+                    <dt>video and audio advanced approach</dt>
+                    <dd>
+                        <code>&lt;video controls autoplay loop muted width=&quot;digit&quot; height=&quot;digit&quot;
+                        preload=&quot;auto&quot; poster=&quot;images/image.png&quot;&gt;</code>
+                    </dd>
+                    <dd style="margin-left: 80px">
+                        <code>&lt;source src=&quot;.mp4&quot; type=&quot;video/mp4&quot;&gt;</code>
+                    </dd>
+                    <dd style="margin-left: 80px">
+                        <code>&lt;source src=&quot;.WebM&quot; type=&quot;video/WebM&quot;&gt;</code>
+                    </dd>
+                    <dd style="margin-left: 80px">
+                        <code>&lt;p&gt;fallback message if the user's browser does not support html videos. we
+                            can also provide a link if possible &lt;a href=&quot;&quot;&gt;here&lt;/a&gt;&lt;/p&gt;
+                        </code>
+                    </dd>
+                    <dd>
+                        <code>&lt;/video&gt;</code>
+                    </dd>
+                    <dd>
+                        --we use &lt;source&gt; so the browser can go through the &lt;source&gt; elements 
+                        and play the first &lt;source&gt; it has the codec to support
+                    </dd>
+                    <dt>audio</dt>
+                    <dd>
+                        <code>&lt;audio&gt;</code> --employs the same structure as &lt;video&gt; except it
+                        doesn't include attributes : <code>poster width height</code>
+                    </dd>
+                    <dt>displaying text in videos</dt>
                     <dd>
                         
                     </dd>
