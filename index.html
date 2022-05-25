@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en-US">
     <head>
-        <meta charset="utf-8">
+        <meta charset="UTF-8">
         <meta name="author" content="heetrdave">
         <meta name="description" content="notes from mdn-html">
         <title>mdn-html</title>
@@ -11,17 +11,264 @@
     <body>
         <header> 
             <h1>mdn-html notes</h1>
-            <p><code>const var = () => { }; </code></p>
-            <p><var>const var</var></p>
-            <p><samp>output-text</samp></p>
         </header>
 
         <nav>
-
+            <ul>
+                <li><a href="#basics">basics</a></li>
+                <li><a href="#head?">what's in the &lt;head&gt;?</a></li>
+                <li><a href="#advanced-text-formatting">advanced text formatting</a></li>
+                <li>section</li>
+            </ul>
         </nav>
 
         <main>
+            <section id="basics">
+                <h2>basics</h2>
+                <dl>
+                    <dt>html</dt>
+                    <dd>Hypertext markup-language is used to structure a webpage and its contents. 
+                        An <var title="hypertext markup-language">html</var> document consists of a series of elements which you use to enclose 
+                        or wrap around different parts of the content to make it appear or act a certain way.
+                    </dd>
+                    <dt>anatomy of an element</dt>
+                    <dd>
+                        <code>&lt;p class=&quot;&quot;&gt; test-content &lt;/p&gt;</code>
+                    </dd>
+                    <dd>
+                        element name : p
+                    </dd>
+                    <dd>
+                        opening tag : &lt;p&gt; 
+                    </dd>
+                    <dd>
+                        content : test-content
+                    </dd>
+                    <dd>
+                        closing tag : &lt;/p&gt;
+                    </dd>
+                    <dd>
+                        attribute : class=&quot;&quot;
+                    </dd>
+                    <dt>empty elements</dt>
+                    <dd>
+                        some elements have no content : <code>&lt;img src=&quot;&quot; alt=&quot;&quot;&gt;</code>
+                    </dd>
+                    <dt>block-level elements</dt>
+                    <dd>
+                        a block-level element appears on a new line following the content that preceded it. 
+                        Block-level elements are typically structural elements such as : 
+                        <code>&lt;h1 - h6&gt;</code>, <code>&lt;p&gt;</code>, <code>&lt;ul or ol&gt;</code>, 
+                        <code>&lt;nav&gt;</code>, <code>&lt;div&gt;</code>, <code>&lt;section&gt;</code>
+                    </dd>
+                    <dt>inline elements</dt>
+                    <dd>
+                        an inline element is typically contained within a block-level element. Inline elements will
+                        not cause a new line to appear. Examples of inline elements : <code>&lt;img&gt;</code>,
+                        <code>&lt;em&gt;</code>, <code>&lt;strong&gt;</code>, <code>&lt;span&gt;</code>, <code>&lt;code&gt;</code>,
+                        <code>&lt;var&gt;</code>, <code>&lt;samp&gt;</code>
+                    </dd>
+                    <dt>anatomy of an html document</dt>
+                    <dd>
+                        <code>&lt;!DOCTYPE html&gt;</code> --pre-amble 
+                    </dd>
+                    <dd>
+                        <code>&lt;html lang=&quot;en-US&quot;&gt;</code> --root element
+                    </dd>
+                    <br>
+                    <dd style="margin-left: 60px;">
+                        <code>&lt;head&gt;</code> --container for content that is not shown on the webpage
+                    </dd>
+                    <dd style="margin-left: 60px;">
+                        <code>&lt;/head&gt;</code>
+                    </dd>
+                    <br>
+                    <dd style="margin-left: 60px;">
+                        <code>&lt;body&gt;</code> --container for content that is shown onn the webpage
+                    </dd>
+                    <dd style="margin-left: 80px;">
+                        <code>&lt;header&gt;</code> --an <code>&lt;h1&gt;</code> element is typically
+                        contained in here. It is good practice to only have one per page.
+                    </dd>
+                    <dd style="margin-left: 80px;">
+                        <code>&lt;/header&gt;</code>
+                    </dd>
+                    <br>
+                    <dd style="margin-left: 80px;">
+                        <code>&lt;nav&gt;</code> --a navigation bar will be defined in this element
+                    </dd>
+                    <dd style="margin-left: 80px;">
+                        <code>&lt;/nav&gt;</code> 
+                    </dd>
+                    <br>
+                    <dd style="margin-left: 80px;">
+                        <code>&lt;main&gt;</code> --content that is specific & relevent to the webpage will go here 
+                    </dd>
+                    <dd style="margin-left: 80px;">
+                        <code>&lt;/main&gt;</code>
+                    </dd>
+                    <br>
+                    <dd style="margin-left: 80px;">
+                        <code>&lt;footer&gt;</code> --end of page content will go here
+                    </dd>
+                    <dd style="margin-left: 80px;">
+                        <code>&lt;/footer&gt;</code>
+                    </dd>
+                    <dd style="margin-left: 60px;">
+                        <code>&lt;/body&gt;</code>
+                    </dd>
+                    <br>
+                    <dd>
+                        <code>&lt;/html&gt;</code>
+                    </dd>
+                    <dt>heading elements</dt>
+                    <dd>
+                        heading elements span <code>&lt;h1&gt; - &lt;h6&gt;</code>. However, you will mostly
+                        use to up <code>&lt;h4&gt;</code>.
+                    </dd>
+                    <dd>
+                        <code>&lt;h1&gt;</code> --main title heading (one per webpage)
+                    </dd>
+                    <dd>
+                        <code>&lt;h2&gt;</code> --top level heading
+                    </dd>
+                    <dd>
+                        <code>&lt;h3&gt;</code> --sub level heading
+                    </dd>
+                    <dd>
+                        <code>&lt;h4&gt;</code> --sub-sub level heading
+                    </dd>
+                    <dt>paragraph element</dt>
+                    <dd>
+                        <code>&lt;p&gt;</code>
+                    </dd>
+                    <dt>list elements</dt>
+                    <dd>
+                        unordered list : <code>&lt;ul&gt;</code>
+                    </dd>
+                    <dd>
+                        ordered list : <code>&lt;ol&gt;</code>
+                    </dd>
+                    <dd>
+                        structure :
+                    </dd>
+                    <dd>
+                        <code>&lt;ul&gt;</code>
+                    </dd>
+                    <dd style="margin-left: 80px;">
+                        <code>&lt;li&gt;</code>list-item<code>&lt;/li&gt;</code>
+                    </dd>
+                    <dd style="margin-left: 80px;">
+                        <code>&lt;li&gt;</code>list-item<code>&lt;/li&gt;</code>
+                    </dd>
+                    <dd style="margin-left: 80px;">
+                        <code>&lt;li&gt;</code>list-item<code>&lt;/li&gt;</code>
+                    </dd>
+                    <dd>
+                        <code>&lt;/ul&gt;</code>
+                    </dd>
+                    <dt><code>&lt;nav&gt;</code> bar</dt>
+                    <dd>
+                        --essentially an <code>&lt;ul&gt;</code> element composed of
+                         <code>&lt;li&gt;&lt;a&gt;&lt;/a&gt;&lt;/li&gt;</code> elements</code>
+                    </dd>
+                    <dt>anchor element</dt>
+                    <dd>
+                        <code>&lt;a href=&quot;https://firefox.com&quot; target=&quot;_blank&quot; 
+                            title=&quot;tool-tip description&quot; download=&quot;content-pdf.pdf&quot;
+                            &gt;</code>link-description<code>&lt;/a&gt;</code>
+                    </dd>
+                    <dd>
+                        href : link source which can also be an id (#id) or class (.class) as well as other html pages in the
+                        project directory. in addition, href can be set to &quot;mailto:default@gmail.com&quot; which will
+                        compose an email to the given email-address. full example : &quot;mailto:default@gmail.com&quot;?
+                        subject=the%20subject%20of%20the%20email&body=the%20body%of%20the%email&quot;. %20 --
+                        refers to a space in percent encoding. ? --used to separate the main url from the field values.
+                        & --used to separate the field values
+                    </dd>
+                    <dd>
+                        target : how to open the link. _blank --open in a new tab
+                    </dd>
+                    <dd>
+                        title : tool-tip description that is displayed when a cursor is hovering over the link
+                    </dd>
+                    <dd>
+                        download : provide a link for a resource to download
+                    </dd>
+                    <dt>literal characters to their character reference equivalents</dt>
+                    <dd>
+                        <code>&lt;</code> 
+                        <code><span style="margin-left: 40px;">&amp;lt;</span></code>
+                    </dd>
+                    <dd>
+                        <code>&gt;</code> 
+                        <code><span style="margin-left: 40px;">&amp;gt;</span></code>
+                    </dd>
+                    <dd>
+                        <code>&quot;</code> 
+                        <code><span style="margin-left: 40px;">&amp;quot;</span></code>
+                    </dd>
+                    <dd>
+                        <code>&apos;</code> 
+                        <code><span style="margin-left: 40px;">&amp;apos;</span></code>
+                    </dd>
+                    <dd>
+                        <code>&amp;</code> 
+                        <code><span style="margin-left: 40px;">&amp;amp;</span></code>
+                    </dd>
+                </dl>
+            </section>
 
+            <section id="head?">
+                <h2>what's in the &lt;head&gt;?</h2>
+                <dl>
+                    <dt>&lt;meta&gt;</dt>
+                    <dd>
+                        metadata is data that essentially describes the webcontent data.
+                    </dd>
+                    <dt><code>&lt;meta charset=&quot;UTF-8&quot;&gt;</code></dt>
+                    <dd>
+                        --sets the character set
+                        of the document to UTF-8, which is a universal character set.
+                    </dd>
+                    <dt><code>&lt;meta name=&quot;author&quot; content=&quot;author-name&quot;&gt;</code></dt>
+                    <dd>
+                        --sets metadata for the author equal to the author-name
+                    </dd>
+                    <dt><code>&lt;meta name=&quot;description&quot; content=&quot;mdn-html notes&quot;&gt;</code></dt>
+                    <dd>
+                        --sets metadata for the description of the webpage equal to mdn-html notes. Adding
+                        keywords to the descriptions increases traction (SEO)
+                    </dd>
+                    <dt><code>&lt;title&gt;mdn-html&lt;/title&gt;</code></dt>
+                    <dd>
+                        --sets the title of the webpage to mdn-html
+                    </dd>
+                    <dt><code>&lt;link rel=&quot;stylesheet&quot; href=&quot;styles/style.css&quot;&gt;</code></dt>
+                    <dd>
+                        --links the style.css stylesheet to the html document
+                    </dd>
+                    <dt><code>&lt;link rel=&quot;icon&quot; href=&quot;images/image.png&quot; type=&quot;image/x-icon&quot;&gt;</code></dt>
+                    <dd>
+                        --sets the webpage logo for the favorites bar icon
+                    </dd>
+                    <dt><code>&lt;script src=&quot;scripts/main.js&quot; defer&gt;&lt;/script&gt;</code></dt>
+                    <dd>
+                        --links main.js to the html document. defer : keyword that tells the browser to load
+                        the .js file after it has finished parsing the html document
+                    </dd>
+                </dl>
+            </section>
+
+            <section id="advanced-text-formatting">
+                <h2>advanced text formatting</h2>
+                <dl>
+                    <dt>description list</dt>
+                    <dd>
+                        
+                    </dd>
+                </dl>
+            </section>
         </main>
 
         <footer>

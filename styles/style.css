@@ -1,13 +1,18 @@
 html {
     font-family: 'Times New Roman', Times, serif;
-    font-size: 20px;
+    font-size: 17px;
 }
 
 body {
     width: 1000px;
     margin: 0 auto;
+    text-align: left;
 }
 
 code {
-    font-size: 15px;
+    font-size: 17px;
+}
+
+dt {
+    padding-top: 10px;
 }
