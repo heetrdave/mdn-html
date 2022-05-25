@@ -1,4 +1,13 @@
+html {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+}
+
 body {
+    width: 1000px;
     margin: 0 auto;
-    width: 800px;
+}
+
+code {
+    font-size: 15px;
 }
