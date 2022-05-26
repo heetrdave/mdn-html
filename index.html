@@ -19,6 +19,8 @@
                 <li><a href="#head?">what's in the &lt;head&gt;?</a></li>
                 <li><a href="#advanced-text-formatting">advanced text formatting</a></li>
                 <li><a href="#multimedia-and-embedding">multimedia and embedding</a></li>
+                <li><a href="#responsive-images">responsive images</a></li>
+                <li><a href="#tables">tables</a></li>
             </ul>
         </nav>
 
@@ -502,9 +504,233 @@
                         <code>&lt;audio&gt;</code> --employs the same structure as &lt;video&gt; except it
                         doesn't include attributes : <code>poster width height</code>
                     </dd>
-                    <dt>displaying text in videos</dt>
+                    <dt>using WEBVTT to display text in videos</dt>
                     <dd>
-                        
+                        WEBVTT is a format that is used to write text files containing multiple strings along
+                        with metadata such as the timestamp in the video at which each text string should be displayed.
+                    </dd>
+                    <dd>
+                        these text strings are called cues. cues include : subtitles, captions, and timed descriptions 
+                    </dd>
+                    <dd style="margin-top: 10px">
+                        example of a WEBVTT file :
+                    </dd>
+                    <dd>
+                        <samp>WEBVTT</samp>
+                    </dd>
+                    <dd>
+                        <br>
+                    </dd>
+                    <dd>
+                        <samp>1</samp>
+                    </dd>
+                    <dd>
+                        <samp>00:00:22.230 --> 00:00:24.606</samp>
+                    </dd>
+                    <dd>
+                        <samp>this is the first subtitle to be displayed</samp>
+                    </dd>
+                    <dd>
+                        <br>
+                    </dd>
+                    <dd>
+                        <samp>2</samp>
+                    </dd>
+                    <dd style="margin-top: 10px">
+                        this file is saved as a .vtt and linked to a <code>&lt;track&gt;</code> element inside of a
+                        <code>&lt;video&gt;</code> element :
+                    </dd>
+                    <dd>
+                        <code>&lt;video controls&gt;</code>
+                    </dd>
+                    <dd style="margin-left: 80px;">
+                        <code>&lt;source...&gt;</code>
+                    </dd>
+                    <dd style="margin-left: 80px;">
+                        <code>&lt;track kind=&quot;subtitles / captions / descriptions&quot; src=&quot;.vtt&quot;
+                            srclang=&quot;en&quot; label=&quot;English&quot;&gt;</code>
+                    </dd>
+                    <dd>
+                        <code>&lt;/video&gt;</code>
+                    </dd>
+                    <dt><code>&lt;iframe&gt;</code></dt>
+                    <dd>
+                        --allows you to embed other web documents into the current document. head over to this video on
+                        <a href="https://www.youtube.com/watch?v=gFDPiE6Opro" target="_blank" title="NOT EVERY MAN IS YOUR FRIEND PART TWO">YouTube</a>. 
+                        Select the share option then copy the <code>&lt;iframe&gt;</code> element in the embed section. Pasted below :
+                    </dd>
+                    <dd style="margin-top: 10px;">
+                        <code>&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/gFDPiE6Opro&quot; 
+                        title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=accelerometer; autoplay; 
+                        clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen&gt;&lt;/iframe&gt;</code>
+                    </dd>
+                    <dd style="margin-top: 10px">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/gFDPiE6Opro"
+                        frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen><span>browser does not support embedded videos using <code>&lt;iframe&gt;</code></span></iframe>
+                    </dd>
+                    <dd style="margin-top: 10px;">
+                        for <code>&lt;iframe&gt;</code> elements not centered around YouTube, you can also include attributes 
+                        <code>allowfullscreen sandbox</code>. --<code>sandbox</code> requests heightened security settings to
+                        prevent hackers accessing site-information through the <code>&lt;iframe&gt;</code> element. in CSS we can add 
+                        a ruleset to <code>iframe</code> to negate a default border : <code>iframe { border: none; }</code>
+                    </dd>
+                </dl>
+            </section>
+
+            <section id="responsive-images">
+                <h2>responsive images</h2>
+                <dl>
+                    <dt>responsive images</dt>
+                    <dd>
+                        --images that work well on devices with widely differing screen sizes and resolutions
+                    </dd>
+                    <dt>resolution switching</dt>
+                    <dd>
+                        --when we want to display identical image content, just larger or smaller, depending on the device
+                    </dd>
+                    <dd style="margin-top: 10px;">
+                        solution : 
+                    </dd>
+                    <dd>
+                        <code>&lt;img srcset=&quot;...480w.jpg 480w, ...800w.jpg 800w&quot; sizes=&quot;(max-width: 600px) 480px, 
+                            800px&quot; src=&quot;800w.jpg&quot; alt=&quot;&quot;&gt;
+                        </code>
+                    </dd>
+                    <dd>
+                        srcset --defines the set of images we will allow the browser to choose between and what size 
+                        each image is
+                    </dd>
+                    <dd>
+                        sizes --defines a set of media conditions and indicates what image size would be best to choose
+                        when certain media conditions are true. <code>sizes=&quot;(max-width: 600px) 480px, 
+                            800px&quot;</code> is a media condition that states : when the viewport width is 600px or less, choose
+                            the 480px image 
+                    </dd>
+                    <dt>art direction</dt>
+                    <dd>
+                        --when we want to change the image displayed to suit different image display sizes. think of it
+                        like cropping an image
+                    </dd>
+                    <dd style="margin-top: 10px;">
+                        solution : 
+                    </dd>
+                    <dd>
+                        <code>&lt;picture&gt;</code>
+                    </dd>
+                    <dd style="margin-left: 80px;">
+                        <code>&lt;source media=&quot;(max-width: 799px)&quot; srcset=&quot;...480w.jpg&quot;&gt;</code>
+                    </dd>
+                    <dd>
+                        <code>&lt;/picture&gt;</code>
+                    </dd>
+                </dl>
+            </section>
+
+            <section id="tables">
+                <h2>tables</h2>
+                <dl>
+                    <dt>table structure</dt>
+                    <dd>
+                        <code>&lt;table&gt;</code>
+                    </dd>
+                    <dd style="margin-left: 80px;">
+                        <code>&lt;caption&gtcaption&lt;/caption&gt;</code>
+                    </dd>
+                    <dd style="margin-left: 80px;">
+                        <code>&lt;thead&gt;</code>
+                    </dd>
+                    <dd style="margin-left: 100px;">
+                        <code>&lt;tr&gt;</code>
+                    </dd>
+                    <dd style="margin-left: 120px;">
+                        <code>&lt;th&gt;table header&lt;/th&gt;</code>
+                    </dd>
+                    <dd style="margin-left: 120px;">
+                        <code>&lt;th&gt;table header&lt;/th&gt;</code>
+                    </dd>
+                    <dd style="margin-left: 120px;">
+                        <code>&lt;th&gt;table header&lt;/th&gt;</code>
+                    </dd>
+                    <dd style="margin-left: 100px;">
+                        <code>&lt;/tr&gt;</code>
+                    </dd>
+                    <dd style="margin-left: 80px;">
+                        <code>&lt;/thead&gt;</code>
+                    </dd>
+                    <dd style="margin-left: 80px;">
+                        <code>&lt;tbody&gt;</code>
+                    </dd>
+                    <dd style="margin-left: 100px;">
+                        <code>&lt;tr&gt;</code>
+                    </dd>
+                    <dd style="margin-left: 120px;">
+                        <code>&lt;td&gt;table data&lt;/td&gt;</code>
+                    </dd>
+                    <dd style="margin-left: 120px;">
+                        <code>&lt;td&gt;table data&lt;/td&gt;</code>
+                    </dd>
+                    <dd style="margin-left: 120px;">
+                        <code>&lt;td&gt;table data&lt;/td&gt;</code>
+                    </dd>
+                    <dd style="margin-left: 100px;">
+                        <code>&lt;/tr&gt;</code>
+                    </dd>
+                    <dd style="margin-left: 80px;">
+                        <code>&lt;/tbody&gt;</code>
+                    </dd>
+                    <dd style="margin-left: 80px;">
+                        <code>&lt;tfoot&gt;</code>
+                    </dd>
+                    <dd style="margin-left: 100px;">
+                        <code>&lt;tr&gt;</code>
+                    </dd>
+                    <dd style="margin-left: 120px;">
+                        <code>&lt;td colspan=&quot;3&quot;&gt;table data&lt;/td&gt;</code>
+                    </dd>
+                    <dd style="margin-left: 100px;">
+                        <code>&lt;/tr&gt;</code>
+                    </dd>
+                    <dd style="margin-left: 80px;">
+                        <code>&lt;/tfoot&gt;</code>
+                    </dd>
+                    <dd>
+                        <code>&lt;/table&gt;</code>
+                    </dd>
+                    <dd style="margin-top: 10px;">
+                        Example : 
+                    </dd>
+                    <dd>
+                        <table>
+                            <caption>test-table</caption>
+                            <thead>
+                                <tr>
+                                    <th scope="col">title</th>
+                                    <th scope="col">views</th>
+                                </tr>
+                            </thead>
+                            <tfoot>
+                                <tr>
+                                    <td>sum</td>
+                                    <td>64</td>
+                                </tr>
+                            </tfoot>
+                            <tbody>
+                                <tr>
+                                    <td>NOT EVERY MAN IS YOUR FRIEND PART ONE</td>
+                                    <td>44</td>
+                                </tr>
+                                <tr>
+                                    <td>NOT EVERY MAN IS YOUR FRIEND PART TWO</td>
+                                    <td>20</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </dd>
+                    <dt><code>scope</code></dt>
+                    <dd>
+                        --an attribute that can be added to the <code>&lt;th&gt;</code> element to tell screen readers
+                        exactly what cells the header is a header for : <code>&lt;th scope=&quot;col&quot;&gt;title&lt;/th&gt;</code>
                     </dd>
                 </dl>
             </section>
